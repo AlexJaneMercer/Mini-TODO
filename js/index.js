@@ -9,6 +9,49 @@ noteInput.addEventListener('click', function () {
   noteInput.classList.remove('show');
 });
 
+window.onload = function() {
+	window.setInterval(function(){
+
+		let Data = new Date();
+
+		let hours = Data.getHours();
+		let minutes = Data.getMinutes();
+		let seconds = Data.getSeconds();
+    let year = Data.getFullYear();
+    let month = Data.getMonth();
+    let day = Data.getDate();
+
+    switch (month)
+    {
+      case 0: fMonth="January"; break;
+      case 1: fMonth="February"; break;
+      case 2: fMonth="March"; break;
+      case 3: fMonth="April"; break;
+      case 4: fMonth="May"; break;
+      case 5: fMonth="June"; break;
+      case 6: fMonth="July"; break;
+      case 7: fMonth="August"; break;
+      case 8: fMonth="September"; break;
+      case 9: fMonth="October"; break;
+      case 10: fMonth="November"; break;
+      case 11: fMonth="December"; break;
+    }
+
+		if (hours < 10)
+			hours = "0" + hours;	
+		
+		if (minutes < 10)
+			minutes = "0" + minutes;	
+
+		if (seconds < 10) 
+			seconds = "0" + seconds;
+	
+		let dateTime = `Today: ${day} ${fMonth} ${year} <br> ${hours}:${minutes}:${seconds}`;
+
+		document.getElementById("dateBox").innerHTML = dateTime;
+	},100);
+}
+
 formContainer.addEventListener('submit', (event) => {
   event.preventDefault();
   let noteobj = [];

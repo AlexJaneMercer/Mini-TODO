@@ -101,6 +101,12 @@ html {
   font-size: 5vw;
 }
 
+#dateBox {
+  text-align: center;
+  height: 3vw;
+  font-size: 1.2vw;
+}
+
 #container {
   padding: 50px;
    padding-bottom: 0px !important;
